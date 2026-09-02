@@ -76,22 +76,14 @@ export default async function Home() {
           </Reveal>
         )}
 
-        {/* Dynamic Banner 2 */}
-        {agroBanner ? (
-          <Banner
-            bgImage={agroBanner.img}
-            title={agroBanner.title}
-            desc={agroBanner.desc}
-            buttonText="Découvrir l'Agro"
-          />
-        ) : (
-          <Banner
-            bgImage="/banner/farm-banner2.png"
-            title={<>Moderniser l'agriculture <br /> pour nourrir l'avenir.</>}
-            desc={<>AFRI TECHS accompagne la transition agricole africaine avec des technologies de pointe : machinerie moderne, outils de précision et systèmes d'irrigation intelligents.</>}
-            buttonText="Découvrir l'Agro"
-          />
-        )}
+        {/* Static Agriculture & Services Banner */}
+        <Banner
+          bgImage="/banner/farm-banner2.png"
+          title={<>Moderniser l'agriculture <br /> pour nourrir l'avenir.</>}
+          desc={<>AFRI TECHS accompagne la transition agricole africaine avec des technologies de pointe : machinerie moderne, outils de précision et systèmes d'irrigation intelligents.</>}
+          buttonText="Nos Services"
+          buttonLink="/services"
+        />
 
         {/* Flagship Projects */}
         {flagshipProjects.length > 0 && (

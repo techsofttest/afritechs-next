@@ -85,15 +85,7 @@ export default function ProductOrderCTA({
         </div>
       </div>
 
-      {/* Assurance details with dark blue checks */}
-      <div className="text-[16px] text-[#0c2847] flex flex-col gap-2 font-semibold">
-        <p className="flex items-center gap-2">
-          <span className="text-[#0c2847] font-bold text-[13px]">✓</span> Paiements sécurisés
-        </p>
-        <p className="flex items-center gap-2">
-          <span className="text-[#0c2847] font-bold text-[13px]">✓</span> Accompagnement logistique
-        </p>
-      </div>
+
 
       {/* Action Buttons with high engagement animations */}
       <div className="flex flex-col gap-2.5 mt-8">

@@ -314,7 +314,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="lastName" className="text-xs font-semibold text-gray-900">
-                      Nom *
+                      Nom de famille *
                     </label>
                     <input
                       required

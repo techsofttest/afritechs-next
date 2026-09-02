@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 
@@ -82,16 +83,20 @@ export default function Hero({ slides: propSlides }: HeroProps) {
             {slides[safeSlideIndex].desc}
           </p>
           <div className="flex gap-4">
-            <Button variant="white" size="md" className="!text-[#0c2847] hover:!text-[#0c2847]">
-              Découvrir
-            </Button>
-            <Button
-              variant="secondary"
-              size="md"
-              className="border-white text-white hover:bg-white hover:text-[#0c2847]"
-            >
-              Consulter
-            </Button>
+            <Link href="/products">
+              <Button variant="white" size="md" className="!text-[#0c2847] hover:!text-[#0c2847] cursor-pointer">
+                Découvrir
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                variant="secondary"
+                size="md"
+                className="border-white text-white hover:bg-white hover:text-[#0c2847] cursor-pointer"
+              >
+                Contact
+              </Button>
+            </Link>
           </div>
         </div>
         {/* Left Arrow Button */}
