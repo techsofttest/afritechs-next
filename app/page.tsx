@@ -52,22 +52,14 @@ export default async function Home() {
           )
         ))}
 
-        {/* Dynamic Banner 1 */}
-        {missionBanner ? (
-          <Banner
-            bgImage={missionBanner.img}
-            title={missionBanner.title}
-            desc={missionBanner.desc}
-            buttonText="Notre Mission"
-          />
-        ) : (
-          <Banner
-            bgImage="/banner/mission-banner2.png"
-            title="Nous croyons que l'innovation propulse l'avenir."
-            desc="La mission d'AFRI TECHS SARLU est de fournir des solutions durables et performantes dans l'agriculture, l'énergie, et l'industrie pour contribuer au développement économique de l'Afrique."
-            buttonText="Notre Mission"
-          />
-        )}
+        {/* Static Mission Banner */}
+        <Banner
+          bgImage="/banner/mission-banner2.png"
+          title="Nous croyons que l'innovation propulse l'avenir."
+          desc="La mission d'AFRI TECHS SARLU est de fournir des solutions durables et performantes dans l'agriculture, l'énergie, et l'industrie pour contribuer au développement économique de l'Afrique."
+          buttonText="Notre Mission"
+          buttonLink="/about"
+        />
 
         {/* Flagship Products / Solutions */}
         {flagshipProducts.length > 0 && (
