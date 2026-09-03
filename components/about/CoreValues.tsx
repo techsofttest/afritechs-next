@@ -13,29 +13,6 @@ interface CoreValuesProps {
   };
 }
 
-const defaultValues: ValueItem[] = [
-  {
-    icon: "dependability",
-    title: "Dependability",
-    desc: "Un engagement constant de fiabilité envers nos partenaires agricoles et automobiles."
-  },
-  {
-    icon: "satisfaction",
-    title: "Customer Satisfaction",
-    desc: "Placer le client au centre de notre processus logistique et technique."
-  },
-  {
-    icon: "uniqueness",
-    title: "Uniqueness",
-    desc: "Des offres sur-mesure et adaptées aux réalités géographiques de l'Afrique de l'Ouest."
-  },
-  {
-    icon: "cost",
-    title: "Cost Effectiveness",
-    desc: "Optimiser les coûts pour garantir un rapport qualité-prix sans précédent."
-  }
-];
-
 function renderIcon(iconKey?: string) {
   switch (iconKey) {
     case "satisfaction":
@@ -67,17 +44,21 @@ function renderIcon(iconKey?: string) {
 }
 
 export default function CoreValues({ data }: CoreValuesProps) {
-  const sectionTitle = data?.section_title || "Nos Valeurs Fondamentales";
-  const items = data?.items && data.items.length > 0 ? data.items : defaultValues;
+  const sectionTitle = data?.section_title || "";
+  const items = data?.items || [];
+
+  if (items.length === 0) return null;
 
   return (
     <section className="py-16 md:py-36 px-4 md:px-16 lg:px-24 bg-gray-50 border-b border-gray-200">
       <div className="max-w-[1440px] mx-auto w-full">
-        <div className="max-w-[1440px] mx-auto text-center mb-8 md:mb-16 relative z-10">
-          <h2 className="text-[22px] sm:text-[28px] lg:text-[34px] font-semibold text-[#0c2847] uppercase tracking-wider relative inline-block pb-3 md:pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 md:after:w-20 after:h-1 after:bg-brand">
-            {sectionTitle}
-          </h2>
-        </div>
+        {sectionTitle && (
+          <div className="max-w-[1440px] mx-auto text-center mb-8 md:mb-16 relative z-10">
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[34px] font-semibold text-[#0c2847] uppercase tracking-wider relative inline-block pb-3 md:pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 md:after:w-20 after:h-1 after:bg-brand">
+              {sectionTitle}
+            </h2>
+          </div>
+        )}
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mt-8">
           {items.map((item, idx) => (
