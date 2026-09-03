@@ -149,27 +149,6 @@ export default function ProductDetailsInfo({
           </button>
         </div>
       </div>
-
-      {/* Dynamic Key Quick Attributes */}
-      <div>
-        <h4 className="text-[12px] font-bold text-[#0c2847] uppercase tracking-wider mb-2 font-sans">
-          Caractéristiques Clés
-        </h4>
-        <div className="border border-[#0c2847]/40 rounded-lg p-3.5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-          {attributes.map((attr, idx) => (
-            <div
-              key={idx}
-              className={`pr-2 ${idx < attributes.length - 1 && (idx + 1) % 3 !== 0
-                ? "border-r border-[#0c2847]/20"
-                : ""
-                }`}
-            >
-              <span className="block text-[14px] text-[#0c2847] font-normal mb-0.5">{attr.label}</span>
-              <span className="block text-[16px] font-bold text-[#0c2847] leading-tight">{attr.value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

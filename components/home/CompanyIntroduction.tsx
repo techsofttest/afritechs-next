@@ -8,7 +8,7 @@ export default function CompanyIntroduction() {
       title="Bienvenue chez Afri-techs"
       desc="Nous offrons des services de premier ordre dans les secteurs automobile et agricole en République de Guinée et aux Émirats Arabes Unis, fondés sur la fiabilité, la performance et l'excellence client."
       buttonText="En savoir plus"
-      buttonLink="#contact"
+      buttonLink="/contact"
     />
   );
 }

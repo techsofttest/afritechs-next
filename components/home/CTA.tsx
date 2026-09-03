@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import Button from "../ui/Button";
 
 export default function CTA() {
@@ -47,9 +48,11 @@ export default function CTA() {
         <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold leading-tight max-w-5xl">
           Prêt à propulser vos projets <br /> avec nos technologies ?
         </h2>
-        <Button variant="white" size="lg" className="self-center font-bold">
-          Contactez-nous
-        </Button>
+        <Link href="/contact">
+          <Button variant="white" size="lg" className="self-center font-bold">
+            Contactez-nous
+          </Button>
+        </Link>
       </div>
     </section>
   );
