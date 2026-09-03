@@ -114,28 +114,6 @@ export default function ProductDetailPage({ params }: PageProps) {
     return product?.related ?? [];
   }, [product]);
 
-  // Default product FAQs fallback
-  const defaultFaqs = useMemo(() => [
-    {
-      q: "Comment puis-je obtenir un devis pour ce produit ?",
-      a: "Vous pouvez cliquer sur le bouton \"Faire une demande de devis\" ou contacter notre équipe. Nos experts vous transmettront une offre tarifaire personnalisée sous 24 à 48 heures."
-    },
-    {
-      q: "Quels sont les délais et modalités de livraison ?",
-      a: "Nous assurons la livraison et le déploiement de nos équipements dans toute la République de Guinée et dans la sous-région selon vos spécifications."
-    },
-    {
-      q: "Ce produit bénéficie-t-il d'une garantie et d'un support technique ?",
-      a: "Oui, tous nos équipements et produits disposent d'une garantie et de l'assistance technique dédiée garantie par AFRI TECHS SARLU."
-    },
-    {
-      q: "Fournissez-vous les pièces de rechange et la maintenance ?",
-      a: "Absolument. Nous mettons à disposition des pièces détachées d'origine et offrons un service après-vente et de maintenance réactif."
-    }
-  ], []);
-
-  const productFaqs = (product?.faqs && product.faqs.length > 0) ? product.faqs : defaultFaqs;
-
   // Carousel hooks & State
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -348,11 +326,13 @@ export default function ProductDetailPage({ params }: PageProps) {
               )}
 
               {/* FAQ Accordion Component */}
-              <ProductFaqAccordion
-                faqs={productFaqs}
-                activeFaq={activeFaq}
-                toggleFaq={toggleFaq}
-              />
+              {product.faqs && product.faqs.length > 0 && (
+                <ProductFaqAccordion
+                  faqs={product.faqs}
+                  activeFaq={activeFaq}
+                  toggleFaq={toggleFaq}
+                />
+              )}
 
               {/* Recommendations Section */}
               {recommendations.length > 0 && (
