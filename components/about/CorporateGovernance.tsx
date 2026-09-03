@@ -1,17 +1,27 @@
 import React from "react";
 
-export default function CorporateGovernance() {
+interface CorporateGovernanceProps {
+  data?: {
+    section_title?: string;
+    desc?: string;
+  };
+}
+
+export default function CorporateGovernance({ data }: CorporateGovernanceProps) {
+  const sectionTitle = data?.section_title || "Gouvernance d'Entreprise";
+  const desc = data?.desc || "Chez Afri-techs, nous croyons qu'une saine gouvernance est le socle de notre développement à long terme. Nos processus de décision s'alignent sur des standards éthiques rigoureux en Guinée et aux Émirats Arabes Unis afin de protéger les intérêts de nos clients, de nos employés et de nos communautés.";
+
   return (
     <section className="py-12 md:py-20 px-4 md:px-16 lg:px-24 bg-gray-50 border-b border-gray-200">
       <div className="max-w-[1440px] mx-auto w-full text-center">
         <div className="max-w-[1440px] mx-auto mb-8 md:mb-16 relative z-10 text-center">
           <h2 className="text-[22px] sm:text-[28px] lg:text-[34px] font-semibold text-[#0c2847] uppercase tracking-wider relative inline-block pb-3 md:pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 md:after:w-20 after:h-1 after:bg-brand">
-            Gouvernance d&apos;Entreprise
+            {sectionTitle}
           </h2>
         </div>
 
         <p className="text-gray-800 text-sm md:text-base lg:text-lg leading-relaxed mb-6 font-semibold max-w-4xl mx-auto">
-          Chez Afri-techs, nous croyons qu&apos;une saine gouvernance est le socle de notre développement à long terme. Nos processus de décision s&apos;alignent sur des standards éthiques rigoureux en Guinée et aux Émirats Arabes Unis afin de protéger les intérêts de nos clients, de nos employés et de nos communautés.
+          {desc}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mt-8 md:mt-18">
           <div className="p-6 bg-white border border-gray-200 rounded-lg flex flex-col items-center gap-4">

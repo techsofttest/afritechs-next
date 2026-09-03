@@ -635,4 +635,28 @@ export async function resetPasswordCustomer(payload: { email: string; otp: strin
   }
 }
 
+export interface PageContentData {
+  id?: number;
+  key: string;
+  title?: string;
+  meta_title?: string;
+  meta_desc?: string;
+  content: Record<string, any>;
+}
+
+export async function fetchPageContent(key: string): Promise<PageContentData | null> {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://afritechs.test/api";
+  try {
+    const res = await fetch(`${baseUrl}/pages/${key}`, {
+      cache: "no-store",
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json.data || null;
+  } catch (error) {
+    console.error(`Error fetching page content for [${key}]:`, error);
+    return null;
+  }
+}
+
 
